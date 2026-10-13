@@ -1,4 +1,4 @@
-"""Initial application created by Developer A."""
+"""Demonstrate Developer B's contact-search feature."""
 
 from contact import Contact
 from contact_book import ContactBook
@@ -12,6 +12,9 @@ def main() -> int:
 
     print("ALL CONTACTS")
     for contact in contact_book.list_contacts():
+        print(contact.display())
+    print("\nSEARCH RESULTS FOR ASHA")
+    for contact in contact_book.search_contacts("ASHA"):
         print(contact.display())
     return 0
 

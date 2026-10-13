@@ -1,8 +1,8 @@
-"""Initial Contact Book implementation created by Developer A."""
+"""Contact Book with Developer B's case-insensitive search."""
 
 import logging
 
-from contact import Contact
+from contact import Contact, require_text
 
 logger = logging.getLogger(__name__)
 
@@ -25,3 +25,14 @@ class ContactBook:
     def list_contacts(self) -> tuple[Contact, ...]:
         """Return contacts without exposing the mutable internal list."""
         return tuple(self._contacts)
+
+    def search_contacts(self, query: str) -> tuple[Contact, ...]:
+        """Find contacts whose name or email contains a nonempty text query."""
+        normalized_query = require_text(query, "query").casefold()
+        matches = tuple(
+            contact for contact in self._contacts
+            if normalized_query in contact.name.casefold()
+            or normalized_query in contact.email.casefold()
+        )
+        logger.info("Contact search completed: matches=%d", len(matches))
+        return matches
