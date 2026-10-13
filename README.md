@@ -103,9 +103,3 @@ The script demonstrates:
 The commands require GitHub CLI to be installed and authenticated. Because one
 GitHub account normally cannot approve its own Pull Request, Developer A records
 the review using a Pull Request comment before merging.
-
-## Submission links
-
-- Public GitHub repository: `GENERATED-AFTER-RUNNING-THE-SCRIPT`
-- Pull Request: `GENERATED-AFTER-RUNNING-THE-SCRIPT`
-- YouTube video: `ADD-YOUTUBE-VIDEO-URL`
